@@ -4,14 +4,20 @@
  */
 angular.module('rentalApp.rentals').component('rentalList',{
     templateUrl: 'rentals/rental-list.html',
-    controller: function RentalListCtrl() {
-        this.rentals = rentals;
+    controller: function RentalListCtrl($http) {
+        var self = this;
+
+        $http.get('rentals/rentals.json').then(function (response) {
+            self.rentals = response.data;
+        });
+
         this.sortType = {};
         this.sortReverse = false;
         this.setSortType = function(setSortType, setSortReverse){
             this.sortType = setSortType;
             this.sortReverse = setSortReverse;
         }
+
 
     }
 });
