@@ -1,5 +1,6 @@
 [
   {
+    "id": "1",
     "startDate": "01/12/2016",
     "endDate": "15/12/2016",
     "status": "over",
@@ -9,6 +10,7 @@
     }
   },
   {
+    "id": "2",
     "startDate": "01/01/2017",
     "endDate": "08/01/2017",
     "status": "validated",
@@ -18,6 +20,7 @@
     }
   },
   {
+    "id": "3",
     "startDate": "01/07/2017",
     "endDate": "15/08/2017",
     "status": "pending",
