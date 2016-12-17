@@ -2,11 +2,11 @@
  * Created by arnaud on 15/12/2016.
  * Rental list component: use to render all rentals
  */
-angular.module('rentalApp.rentals').component('rentalList', {
-    templateUrl: 'rentals/rental-list.html',
+angular.module('rentalApp.rentalList').component('rentalList', {
+    templateUrl: 'rental-list/rental-list.html',
     controller: ['$http', function RentalListCtrl($http) {
         var self = this;
-        $http.get('rentals/rentals.json').then(function (response) {
+        $http.get('rental-list/rentals.json').then(function (response) {
             self.rentals = response.data;
         });
 

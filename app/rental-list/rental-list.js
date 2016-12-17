@@ -3,7 +3,7 @@
  * Module for rentals
  */
 'use strict';
-angular.module('rentalApp.rentals', []);
+angular.module('rentalApp.rentalList', []);
 
 
 

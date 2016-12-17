@@ -6,7 +6,8 @@ angular.module('rentalApp', [
     'myApp.view1',
     'myApp.view2',
     'myApp.version',
-    'rentalApp.rentals'
+    'rentalApp.rentalList',
+    'rentalApp.rentalDetail'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
 
@@ -16,6 +17,9 @@ angular.module('rentalApp', [
         }).
         when('/', {
             redirectTo: '/rentals'
+        }).
+        when('/rentals/:rentalId', {
+            template: '<rental-detail></rental-detail>'
         }).
         otherwise({redirectTo: '/'});
 
