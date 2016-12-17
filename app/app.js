@@ -10,6 +10,15 @@ angular.module('rentalApp', [
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
 
-    $routeProvider.otherwise({redirectTo: '/view1'});
+    $routeProvider.
+        when('/rentals', {
+            template: '<rental-list></rental-list>'
+        }).
+        when('/', {
+            redirectTo: '/rentals'
+        }).
+        otherwise({redirectTo: '/'});
+
+    $routeProvider.otherwise({redirectTo: '/'});
 }]);
 
