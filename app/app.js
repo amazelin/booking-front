@@ -4,7 +4,6 @@
 angular.module('rentalApp', [
     'ngRoute',
     'myApp.view1',
-    'myApp.view2',
     'myApp.version',
     'rentalApp.rentalList',
     'rentalApp.rentalDetail'
