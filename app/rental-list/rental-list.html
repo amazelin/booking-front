@@ -24,6 +24,7 @@
             <th ng-click="$ctrl.setSortType('owner',  sortReverse)">Owner</th>
             <th ng-click="$ctrl.setSortType('startDate', sortReverse)">From</th>
             <th ng-click="$ctrl.setSortType('endDate', sortReverse)">To</th>
+            <th ng-click="$ctrl.setSortType('partySize', sortReverse)">Party size</th>
             <th ng-click="$ctrl.setSortType('status', sortReverse)">Status</th>
           </tr>
           </thead>
@@ -32,6 +33,7 @@
             <td>{{rental.owner.firstName}} {{rental.owner.lastName}}</td>
             <td>{{rental.startDate | date}}</td>
             <td>{{rental.endDate | date}}</td>
+            <td>{{rental.partySize}}</td>
             <td>{{rental.status}}</td>
             <td><a class="btn btn-default" href="#!/rentals/{{rental.id}}">Details</a></td>
           </tr>

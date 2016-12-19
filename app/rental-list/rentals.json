@@ -7,7 +7,8 @@
     "owner": {
       "firstName": "Arnaud",
       "lastName": "Mazelin"
-    }
+    },
+    "partySize": "6"
   },
   {
     "id": "2",
@@ -17,7 +18,8 @@
     "owner": {
       "firstName": "Laetitia",
       "lastName": "Joërg"
-    }
+    },
+    "partySize": "4"
   },
   {
     "id": "3",
@@ -27,6 +29,7 @@
     "owner": {
       "firstName": "Jane",
       "lastName": "Doe"
-    }
+    },
+    "partySize": "9"
   }
 ]
