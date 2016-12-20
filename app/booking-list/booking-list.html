@@ -29,13 +29,13 @@
             </tr>
             </thead>
             <tbody>
-            <tr ng-repeat="rental in $ctrl.rentals | filter:$ctrl.query  | orderBy:$ctrl.sortType:$ctrl.sortReverse">
-                <td>{{rental.owner.firstName}} {{rental.owner.lastName}}</td>
-                <td>{{rental.startDate | date}}</td>
-                <td>{{rental.endDate | date}}</td>
-                <td>{{rental.partySize}}</td>
-                <td>{{rental.status}}</td>
-                <td><a class="btn btn-default" href="#!/rentals/{{rental.id}}">Details</a></td>
+            <tr ng-repeat="booking in $ctrl.bookings | filter:$ctrl.query  | orderBy:$ctrl.sortType:$ctrl.sortReverse">
+                <td>{{booking.owner.firstName}} {{booking.owner.lastName}}</td>
+                <td>{{booking.startDate | date}}</td>
+                <td>{{booking.endDate | date}}</td>
+                <td>{{booking.partySize}}</td>
+                <td>{{booking.status}}</td>
+                <td><a class="btn btn-default" href="#!/bookings/{{booking.id}}">Details</a></td>
             </tr>
             </tbody>
         </table>

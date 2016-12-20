@@ -1,6 +1,6 @@
-angular.module('rentalApp.rentalCreate').component('rentalCreate', {
-    templateUrl: 'rental-create/rental-create.html',
-    controller: function RentalCreateCtrl(){
+angular.module('bookingApp.bookingCreate').component('bookingCreate', {
+    templateUrl: 'booking-create/booking-create.html',
+    controller: function BookingCreateCtrl(){
         this.datePickerFrom = {opened: false};
         this.datePickerTo= {opened : false };
 
