@@ -1,45 +1,43 @@
 <div class="row">
-  <div class="col-lg-8">
-    <div class="row">
-      <form class="col-lg-8 form-inline">
-        <div class="form-group col-lg-8">
-          <div class="input-group">
-            <label class="sr-only" for="search">Search</label>
-            <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
-            <input type="search" id="search" class="form-control" placeholder="Search here!" ng-model="$ctrl.query"/>
-          </div>
+    <form class="col-lg-8 form-inline">
+        <div class="form-group col-lg-12">
+            <div class="input-group">
+                <label class="sr-only" for="search">Search</label>
+
+                <div class="input-group-addon"><span class="glyphicon glyphicon-search"></span></div>
+                <input type="search" id="search" class="form-control" placeholder="Search here!"
+                       ng-model="$ctrl.query"/>
+            </div>
         </div>
-      </form>
-      <div class="col-lg-4">
+    </form>
+    <div class="col-lg-4">
         <p>Sort type: {{$ctrl.sortType}}</p>
 
         <p>Sort reverse: {{$ctrl.sortReverse}}</p>
-      </div>
     </div>
-    <div class="row">
-      <section class="table-responsive">
+</div>
+<div class="row">
+    <section class="table-responsive">
         <table class="table table-hover table-condensed">
-          <thead>
-          <tr>
-            <th ng-click="$ctrl.setSortType('owner',  sortReverse)">Owner</th>
-            <th ng-click="$ctrl.setSortType('startDate', sortReverse)">From</th>
-            <th ng-click="$ctrl.setSortType('endDate', sortReverse)">To</th>
-            <th ng-click="$ctrl.setSortType('partySize', sortReverse)">Party size</th>
-            <th ng-click="$ctrl.setSortType('status', sortReverse)">Status</th>
-          </tr>
-          </thead>
-          <tbody>
-          <tr ng-repeat="rental in $ctrl.rentals | filter:$ctrl.query  | orderBy:$ctrl.sortType:$ctrl.sortReverse">
-            <td>{{rental.owner.firstName}} {{rental.owner.lastName}}</td>
-            <td>{{rental.startDate | date}}</td>
-            <td>{{rental.endDate | date}}</td>
-            <td>{{rental.partySize}}</td>
-            <td>{{rental.status}}</td>
-            <td><a class="btn btn-default" href="#!/rentals/{{rental.id}}">Details</a></td>
-          </tr>
-          </tbody>
+            <thead>
+            <tr>
+                <th ng-click="$ctrl.setSortType('owner',  sortReverse)">Owner</th>
+                <th ng-click="$ctrl.setSortType('startDate', sortReverse)">From</th>
+                <th ng-click="$ctrl.setSortType('endDate', sortReverse)">To</th>
+                <th ng-click="$ctrl.setSortType('partySize', sortReverse)">Party size</th>
+                <th ng-click="$ctrl.setSortType('status', sortReverse)">Status</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="rental in $ctrl.rentals | filter:$ctrl.query  | orderBy:$ctrl.sortType:$ctrl.sortReverse">
+                <td>{{rental.owner.firstName}} {{rental.owner.lastName}}</td>
+                <td>{{rental.startDate | date}}</td>
+                <td>{{rental.endDate | date}}</td>
+                <td>{{rental.partySize}}</td>
+                <td>{{rental.status}}</td>
+                <td><a class="btn btn-default" href="#!/rentals/{{rental.id}}">Details</a></td>
+            </tr>
+            </tbody>
         </table>
-      </section>
-    </div>
-  </div>
+    </section>
 </div>
