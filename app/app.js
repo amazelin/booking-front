@@ -3,10 +3,12 @@
 // Declare app level module which depends on views, and components
 angular.module('rentalApp', [
     'ngRoute',
+    'ui.bootstrap',
     'myApp.view1',
     'myApp.version',
     'rentalApp.rentalList',
-    'rentalApp.rentalDetail'
+    'rentalApp.rentalDetail',
+    'rentalApp.rentalCreate'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
 
@@ -15,7 +17,7 @@ angular.module('rentalApp', [
             template: '<rental-list></rental-list>'
         }).
         when('/', {
-            redirectTo: '/rentals'
+            template: '<rental-create></rental-create>'
         }).
         when('/rentals/:rentalId', {
             template: '<rental-detail></rental-detail>'
