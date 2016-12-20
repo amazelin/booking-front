@@ -1,9 +1,9 @@
 <div class="row">
-    <form class="form-horizontal well col-sm-4">
+    <form class="form-horizontal well col-sm-4" ng-submit="$ctrl.add">
         <div class="form-group">
             <label for="owner" class="col-sm-2 control-label">Owner:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="owner">
+                <input type="text" class="form-control" id="owner" />
             </div>
         </div>
         <div class="form-group">
@@ -11,7 +11,7 @@
             <div class="col-sm-10">
                 <div class="input-group">
                     <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
-                    <input type="text" class="form-control" id="from" uib-datepicker-popup is-open="$ctrl.datePickerFrom.opened" ng-model="$ctrl.rental.from" ng-click="$ctrl.openFrom()">
+                    <input type="text" class="form-control" id="from" uib-datepicker-popup is-open="$ctrl.datePickerFrom.opened" ng-model="$ctrl.rental.from" ng-click="$ctrl.openFrom()" />
                 </div>
             </div>
         </div>
@@ -20,31 +20,14 @@
             <div class="col-sm-10">
                 <div class="input-group">
                     <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
-                    <input type="text" class="form-control" id="to" uib-datepicker-popup is-open="$ctrl.datePickerTo.opened" ng-model="$ctrl.rental.to" ng-click="$ctrl.openTo()">
+                    <input type="text" class="form-control" id="to" uib-datepicker-popup is-open="$ctrl.datePickerTo.opened" ng-model="$ctrl.rental.to" ng-click="$ctrl.openTo()" />
                 </div>
             </div>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="Submit" />
+
         </div>
 
     </form>
 </div>
-<!--<div class="row">-->
-    <!--<form class="form-horizontal well col-lg-12">-->
-        <!--<div class="form-group">-->
-            <!--<legend>Book rental</legend>-->
-        <!--</div>-->
-        <!--<div class="form-group">-->
-            <!--<label for="owner" class="col-lg-2 control-label">Owner:</label>-->
-            <!--<div class="col-lg-10">-->
-                <!--<input type="text" class="form-control" id="owner">-->
-            <!--</div>-->
-        <!--</div>-->
-        <!--<div class="form-group">-->
-            <!--<label for="from" class="col-lg-2 control-label">From:</label>-->
-            <!--<div class="input-group col-lg-12">-->
-                <!--<span class="input-group-addon glyphicon glyphicon-calendar"></span>-->
-                <!--<input type="text" id="from"  ng-model="$ctrl.rental.from" ng-click="$ctrl.openFrom()">-->
-            <!--</div>-->
-        <!--</div>-->
-
-    <!--</form>-->
-<!--</div>-->
