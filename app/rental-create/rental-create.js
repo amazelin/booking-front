@@ -1,0 +1,1 @@
+angular.module('rentalApp.rentalCreate', ['ui.bootstrap']);
