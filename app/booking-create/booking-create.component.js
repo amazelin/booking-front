@@ -6,10 +6,10 @@ angular.module('bookingApp.bookingCreate').component('bookingCreate', {
 
         this.openFrom = function(){
             this.datePickerFrom.opened = true;
-        }
+        };
         this.openTo = function(){
             this.datePickerTo.opened = true;
-        }
+        };
 
 
     }

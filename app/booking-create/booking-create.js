@@ -1,1 +1,1 @@
-angular.module('bookingApp.bookingCreate', ['ui.bootstrap']);
+angular.module('bookingApp.bookingCreate', ['ui.bootstrap', 'bookingApp.core']);
