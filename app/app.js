@@ -7,7 +7,8 @@ angular.module('bookingApp', [
     'myApp.version',
     'bookingApp.bookingList',
     'bookingApp.bookingDetail',
-    'bookingApp.bookingCreate'
+    'bookingApp.bookingCreate',
+    'bookingApp.calendar'
 ]).config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
     $locationProvider.hashPrefix('!');
 
@@ -16,7 +17,7 @@ angular.module('bookingApp', [
             template: '<booking-list></booking-list>'
         }).
         when('/', {
-            template: '<booking-create></booking-create>'
+            template: '<booking-create></booking-create><calendar></calendar>'
         }).
         when('/bookings/:bookingId', {
             template: '<booking-detail></booking-detail>'
