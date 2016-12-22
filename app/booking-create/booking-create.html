@@ -2,45 +2,63 @@
       ng-submit="bookingForm.$valid && $ctrl.addBooking(booking)" novalidate>
     <fieldset>
         <legend>Book now!</legend>
-        <div class="form-group" ng-class="{'has-error': bookingForm.owner.$invalid && !bookingForm.owner.$pristine}">
+        <div class="form-group" ng-class="{'has-error': bookingForm.owner.$invalid && bookingForm.owner.$touched}">
             <label for="owner" class="sr-only">Owner:</label>
-            <input type="text" class="form-control" name="owner" id="owner" placeholder="Select owner" ng-model="$ctrl.booking.owner" required/>
-            <p class="help-block" ng-show="bookingForm.owner.$invalid && !bookingForm.owner.$pristine">Owner is required</p>
+            <input type="text" class="form-control" name="owner" id="owner" placeholder="Select owner"
+                   ng-model="$ctrl.booking.owner" required/>
+
+            <div class="help-block" ng-messages="bookingForm.owner.$error"
+                 ng-show="bookingForm.owner.$invalid && bookingForm.owner.$touched">
+                <p ng-message="required">Owner is required.</p>
+            </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error': bookingForm.from.$invalid && bookingForm.from.$touched}">
             <label for="from" class="sr-only">From:</label>
 
             <div class="input-group">
                 <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
-                <input type="text" class="form-control" id="from" ng-model="$ctrl.booking.from"
+                <input type="text" class="form-control" name="from" id="from" ng-model="$ctrl.booking.from"
                        ng-click="$ctrl.openFrom()"
                        uib-datepicker-popup is-open="$ctrl.datePickerFrom.opened" placeholder="From..." required/>
             </div>
+            <div class="help-block" ng-messages="bookingForm.from.$error"
+                 ng-show="bookingForm.from.$invalid && bookingForm.from.$touched">
+                <p ng-message="required">Starting date is required.</p>
+            </div>
         </div>
-        <div class="form-group">
+        <div class="form-group" ng-class="{'has-error': bookingForm.to.$invalid && bookingForm.to.$touched}">
             <label for="to" class="sr-only">To:</label>
 
             <div class="input-group">
                 <div class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></div>
-                <input type="text" class="form-control" id="to" ng-model="$ctrl.booking.to"
+                <input type="text" class="form-control" name="to" id="to" ng-model="$ctrl.booking.to"
                        ng-click="$ctrl.openTo()"
                        uib-datepicker-popup is-open="$ctrl.datePickerTo.opened"
                        placeholder="To..." required/>
             </div>
+            <div class="help-block" ng-messages="bookingForm.to.$error"
+                 ng-show="bookingForm.to.$invalid && bookingForm.to.$touched">
+                <p ng-message="required">Ending date is required.</p>
+            </div>
         </div>
-        <div class="form-group">
+        <div class="form-group"
+             ng-class="{'has-error': bookingForm.partySize.$invalid && bookingForm.partySize.$touched}">
             <label for="partySize" class="control-label sr-only">Party size:</label>
 
-            <select id="partySize" class="form-control" ng-model="$ctrl.booking.partySize"
+            <select name="partySize" id="partySize" class="form-control" ng-model="$ctrl.booking.partySize"
                     ng-options="n for n in [] | range:1:12" required>
                 <option value="" disabled selected>Choose a party size...</option>
             </select>
+
+            <div class="help-block" ng-messages="bookingForm.partySize.$error"
+                 ng-show="bookingForm.partySize.$invalid && bookingForm.partySize.$touched">
+                <p ng-message="required">Party size is required.</p>
+            </div>
         </div>
         <div class="form-group">
-            <button type="submit" class="btn btn-default center-block" ng-disabled="bookingForm.$invalid"><span class="glyphicon glyphicon-ok-sign"></span> Submit</button>
-        </div>
-        <div class="form-group">
-            <p>{{bookingForm.$valid}}</p>
+            <button type="submit" class="btn btn-default center-block" ng-disabled="bookingForm.$invalid"><span
+                    class="glyphicon glyphicon-ok-sign"></span> Submit
+            </button>
         </div>
     </fieldset>
 </form>
