@@ -17,7 +17,7 @@ angular.module('bookingApp', [
             template: '<booking-list></booking-list>'
         }).
         when('/', {
-            template: '<booking-create></booking-create><calendar></calendar>'
+            templateUrl: 'home.html'
         }).
         when('/bookings/:bookingId', {
             template: '<booking-detail></booking-detail>'
